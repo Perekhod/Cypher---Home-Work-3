@@ -24,23 +24,43 @@ int main()
 	else
 	{
 		std::cout << "You entered an invalid character" << std::endl;
-		goto invalidchar;
+		/*goto invalidchar;*/
 	}
 
-	std::cout << "+";
-	int size;
 	std::cout << "Enter line size:" << std::endl;
+	int size;
 	std::cin >> size;
-
-	//try adding a long line and the article itself through a for loop!!!
-
 	std::cout << "Enter the string:" << std::endl;
+	char arr[]{""};
 
+	if (x == cypher)
+	{
+		for (int i = 0; i < size; ++i)
+		{
+			std::cin >> arr[i]; //enter symbol
+		}
 
-	char arr[5]{};
-	std::cout << arr << std::endl;
+		for (int i = 0; i < size; ++i)
+		{
+			std::cout << arr[i] << ","; // print symbol's
+		}
+	}
 
-	invalidchar:// 27 and 30 line, if enter not '+' or '-'.
+	else if(x == decryption)
+	{
+		for (int i = 0; i < size; ++i)
+		{
+			std::cin >> arr[i]; //enter symbol
+		}
+
+		for (int i = 0; i < size; ++i)
+		{
+			std::cout << arr[i] << ","; // print symbol's
+		}
+	}
+	
+
+	///*invalidchar:*/// 27 and 30 line, if enter not '+' or '-'.
 	bool _true = true;
 	while (_true = true)
 	{
