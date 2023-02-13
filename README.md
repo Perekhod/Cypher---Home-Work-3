@@ -1,3 +1,5 @@
+#14.02 - added encryption function
+
 #12.02.23 - Rename variables 'cypher = encrypt' and 'decryption = decrypt'.
 #delete ''goto invalidchar', added 'goto jump' which returns to the beginning if entered an invalid character.
 

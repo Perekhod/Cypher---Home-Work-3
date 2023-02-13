@@ -87,7 +87,7 @@ int main()
 		else
 		{
 			arr[i] += sl;
-			std::sin.clear();
+			/*std::sin.clear();*/
 		}
 	}
 	std::cout << "Encryption result = " << arr << std::endl;
