@@ -8,15 +8,14 @@ int main()
 	std::cout << "Hello! I'm encryption machine by Perekhod v0.1" << std::endl;
 	std::cout << "Are you interested in encryption or decryption?" << std::endl;
 
-	repeat://11 and 75 line,return if the user wants to go back to the beginning.
-	jump:  //14 and 29 line,return if entered an invalid character.
+	repeat://11 and 127 line,return if the user wants to go back to the beginning.
+	jump:  //12 and 28 line,return if entered an invalid character.
 
 	std::cout << "To encrypt enter '+' to decrypt '-'" << std::endl;
 
 	char x;
 	std::cin >> x;
-	char encrypt = 43;
-	char decrypt = 45;
+	char encrypt = 43, decrypt = 45;
 
 	if (x == encrypt)
 		std::cout << "Okay. You choosed " << encrypt << std::endl;
@@ -29,7 +28,7 @@ int main()
 			goto jump;
 	}
 
-	linesize://32 and 42 line, return if entered wrong number of characters
+	linesize://31 and 41 line, return if entered wrong number of characters
 	std::cout << "Enter line size:" << std::endl;
 	int size;
 	std::cin >> size;
@@ -42,16 +41,15 @@ int main()
 		goto linesize;
 	}
 
-	std::cout << "Enter a string of " << size << " characters." << std::endl;
+	std::cout << "Enter a string of " << size << " letters." << std::endl;
 
 	char arr[]{""};
-
+	
 	if (x == encrypt)
 	{
 		for (int i = 0; i < size; ++i)
 		{
 			std::cin >> arr[i]; //enter symbol
-			
 		}
 
 		for (int i = 0; i < size; ++i)
@@ -59,8 +57,29 @@ int main()
 			std::cout << arr[i]; // print symbol's
 		}
 			std::cout << std::endl;
+
+			std::cout << "Enter encryption integer 'X' =\n";
+			int sl;// shear length
+			std::cin >> sl;
+			for (int i = 0; i < size; ++i)
+			{
+				if (arr[i] == 'z')
+				{
+					arr[i] = 'a';
+				}
+				else
+				{
+					arr[i] += sl;
+				}
+			}
+			for (int i = 0; i < size; ++i)
+			{
+				std::cout << arr[i];
+			}
+			std::cout << "\n";
 	}
-	else if(x == decrypt)
+
+	else if (x == decrypt)
 	{
 		for (int i = 0; i < size; ++i)
 		{
@@ -72,25 +91,27 @@ int main()
 			std::cout << arr[i]; // print symbol's
 		}
 			std::cout << std::endl;
-	}
 
-	int sl;// shear length
-	std::cout << "Enter encryption integer 'X' =\n";
-	std::cin >> sl;
-
-	for (int i = 0; i < size; ++i)
-	{
-		if (arr[i] == 'z')
-		{
-			arr[i] = 'a';
-		}
-		else
-		{
-			arr[i] += sl;
-			/*std::sin.clear();*/
-		}
+			std::cout << "Enter decryption integer 'X' =\n";
+			int sl;// shear length
+			std::cin >> sl;
+			for (int i = 0; i < size; ++i)
+			{
+				if (arr[i] == 'z')
+				{
+					arr[i] = 'a';
+				}
+				else
+				{
+					arr[i] -= sl;
+				}
+			}
+			for (int i = 0; i < size; ++i)
+			{
+				std::cout << arr[i];
+			}
+			std::cout << "\n";
 	}
-	std::cout << "Encryption result = " << arr << std::endl;
 
 	bool _true = true;
 	while (_true = true)
@@ -98,7 +119,7 @@ int main()
 		std::cout << "Return to the beginning or close the program?" << std::endl;
 		std::cout << "Enter 'r' to retern or 'q' to exit the program" << std::endl;
 
-		char choice;//selection variable 'return'or exit
+		char choice;//Selection variable 'repeat'or 'exit'.
 		std::cin >> choice;
 		switch (choice)
 		{
@@ -110,7 +131,5 @@ int main()
 			exit(0);
 			break;
 		}
-
 	}
-	
 }
